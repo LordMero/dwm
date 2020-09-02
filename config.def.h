@@ -32,7 +32,7 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask                 isfloating   monitor */
-	{ "Chromium",  "chromium",   "WorkSpace - Chromium",   1 << 5,       0,           -1 },
+	{ "Chromium",  "chromium",   "WorkSpace*",   1 << 5,       0,           -1 },
 	{ "Chromium",  NULL,         NULL,                          2,       0,           -1 },
 	{ "Wfica",    "Wfica",       NULL,                     1 << 5,       0,           -1 },
 	{ "St",        NULL,     "ranger",                     1 << 4,       0,           -1 },
