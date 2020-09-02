@@ -18,7 +18,7 @@ static char *colors[][3] = {
        /*               fg           bg           border   */
        [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
        /* [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  }, */
-j      [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
+      [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
 };
 
 /* tagging */
@@ -31,11 +31,11 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",      NULL,       NULL,       0,            1,           -1 },
-	{ "Chromium",  NULL,       NULL,       2,            0,           -1 },
-	{ "Citrix",    NULL,       NULL,       6,            1,           -1 },
-	{ "St",        "st",       "ranger",   5,            1,           -1 },
+	/* class      instance    title       tags mask                 isfloating   monitor */
+	{ "Chromium",  "chromium",   "WorkSpace - Chromium",   1 << 5,       0,           -1 },
+	{ "Chromium",  NULL,         NULL,                          2,       0,           -1 },
+	{ "Wfica",    "Wfica",       NULL,                     1 << 5,       0,           -1 },
+	{ "St",        NULL,     "ranger",                     1 << 4,       0,           -1 },
 };
 
 /* layout(s) */
@@ -130,9 +130,9 @@ static Key keys[] = {
     { MODKEY|ShiftMask,             XK_r,      spawn,           SHCMD("rebootmachine")},
     { MODKEY,                       XK_r,      spawn,           SHCMD("st -e ranger ~")},
 
-    { 0, XF86XK_AudioMute,          spawn,        SHCMD("amixer set Master toggle") },
-    { 0, XF86XK_AudioRaiseVolume,   spawn,        SHCMD("amixer set Master 5%+") },
-    { 0, XF86XK_AudioLowerVolume,   spawn,        SHCMD("amixer set Master 5%-") },
+    { 0, XF86XK_AudioMute,          spawn,        SHCMD("amixer set Master toggle && kill -44 $(pidof dwmblocks)") },
+    { 0, XF86XK_AudioRaiseVolume,   spawn,        SHCMD("amixer set Master 5%+ && kill -44 $(pidof dwmblocks)") },
+    { 0, XF86XK_AudioLowerVolume,   spawn,        SHCMD("amixer set Master 5%- && kill -44 $(pidof dwmblocks)") },
     { 0, XF86XK_AudioPrev,          spawn,        SHCMD("mpc prev") },
     { 0, XF86XK_AudioNext,          spawn,        SHCMD("mpc next") },
     { 0, XF86XK_AudioPause,         spawn,        SHCMD("mpc pause") },
