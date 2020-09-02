@@ -35,7 +35,7 @@ static const Rule rules[] = {
 	{ "Chromium",  "chromium",   "WorkSpace*",   1 << 5,       0,           -1 },
 	{ "Chromium",  NULL,         NULL,                          2,       0,           -1 },
 	{ "Wfica",    "Wfica",       NULL,                     1 << 5,       0,           -1 },
-	{ "St",        NULL,     "ranger",                     1 << 4,       0,           -1 },
+	//{ "St",        NULL,     "ranger",                     1 << 4,       0,           -1 },
 };
 
 /* layout(s) */
