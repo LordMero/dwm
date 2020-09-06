@@ -128,6 +128,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
+	{ MODKEY,                       XK_s,      togglesticky,   {0} },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
@@ -150,9 +151,12 @@ static Key keys[] = {
 
     /* apps shortcut */
     { MODKEY,                       XK_b,      spawn,           SHCMD("chromium") },
+    { MODKEY,                       XK_BackSpace,      spawn,           SHCMD("/home/graz/.local/bin/dmenu/sysact") },
     { MODKEY,                       XK_c,      spawn,           SHCMD("chromium --new-window 'myworkspace.jpmchase.com' &") },
     { MODKEY|ShiftMask,             XK_r,      spawn,           SHCMD("reboot")},
     { MODKEY,                       XK_r,      spawn,           SHCMD("st -e ranger ~")},
+    { MODKEY,                       XK_n,      spawn,           SHCMD("st -e nmtui")},
+    { MODKEY|ShiftMask,             XK_n,      spawn,           SHCMD("/home/graz/Private/Scripts/connect_to_main")},
 
     { 0, XF86XK_AudioMute,          spawn,        SHCMD("amixer set Master toggle && kill -44 $(pidof dwmblocks)") },
     { 0, XF86XK_AudioRaiseVolume,   spawn,        SHCMD("amixer set Master 5%+ && kill -44 $(pidof dwmblocks)") },
